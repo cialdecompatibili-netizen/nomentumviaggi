@@ -96,7 +96,7 @@
       if (!hdr || !inner) return;
       var wasCompact = hdr.classList.contains('nv--compact');
       hdr.classList.remove('nv--compact');
-      var wide = window.innerWidth >= 768;
+      var wide = window.innerWidth >= 900;
       var overflow = wide && inner.scrollWidth > inner.clientWidth + 1;
       if (overflow) hdr.classList.add('nv--compact');
       else if (wasCompact) closePanel();

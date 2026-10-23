@@ -5,8 +5,8 @@
    --t-nav-bg, --t-nav-text, --t-nav-hover, --t-accent, --t-font, --t-radius
    (definite in _includes/head/custom.html). Cambia il tema, cambia il menu.
 
-   PUNTO CRITICO - IL BREAKPOINT: sotto 768px compare l'hamburger. Il numero sta in UN
-   solo punto: la riga "@media (max-width: 767.98px)" piu' in basso. Per far scattare
+   PUNTO CRITICO - IL BREAKPOINT: sotto 900px compare l'hamburger. Il numero sta in UN
+   solo punto: la riga "@media (max-width: 899.98px)" piu' in basso. Per far scattare
    l'hamburger prima (es. con tante voci) alza il numero (es. 900px -> 899.98px).
    Le classi iniziano con "nv" per non scontrarsi con quelle del tema (greedy-nav, masthead).
    ===================================================================== */
@@ -64,7 +64,7 @@
 .nv__toggle.collapsed .nv__bar--mid { opacity: 1; }
 
 /* ---- MOBILE / FINESTRA STRETTA: tutto dentro il pannello a scomparsa ---- */
-@media (max-width: 767.98px) {
+@media (max-width: 899.98px) {
   .nv__inner { flex-wrap: wrap; }
   .nv__toggle { display: block; }
   .nv__panel { display: none; flex-basis: 100%; justify-content: flex-start; max-height: calc(100vh - 4rem); overflow-y: auto; }
@@ -99,7 +99,7 @@ a.nv__brand:hover, a.nv__link:hover, a.nv__link:focus-visible, .nv__link:hover, 
 a.nv__dd-item, a.nv__dd-item:visited, a.nv__dd-item:focus { color: var(--t-nav-text, #15191d); }
 a.nv__dd-item:hover, a.nv__dd-item:focus-visible { color: var(--t-accent, #8a6d3b); background: #f6f2ec; box-shadow: none; }
 a.nv__dd-item.active, a.nv__dd-item.active:visited, a.nv__dd-item.active:hover { background: #d9bf94; color: #15191d; box-shadow: none; }
-@media (max-width: 767.98px) { .nv__link, .nv__item.active > .nv__link { box-shadow: none; } .nv__item.active > .nv__link { border-left: 0; padding-left: .6rem; } }
+@media (max-width: 899.98px) { .nv__link, .nv__item.active > .nv__link { box-shadow: none; } .nv__item.active > .nv__link { border-left: 0; padding-left: .6rem; } }
 /* logo EX accanto al titolo */
 .nv__brand{display:inline-flex;align-items:center;gap:.6rem}
 .nv__logo{width:34px;height:34px;border-radius:8px;display:block;flex:none}
@@ -122,7 +122,7 @@ a.nv__dd-item.active, a.nv__dd-item.active:visited, a.nv__dd-item.active:hover {
 .nv__lang-item.is-current { font-weight: 700; box-shadow: inset 3px 0 0 var(--t-accent, #8a6d3b); }
 .nv__lang-item--home { opacity: .6; }
 .nv__lang-item--home:hover { opacity: 1; }
-@media (max-width: 767.98px) { .nv__lang-btn { width: 100%; } }
+@media (max-width: 899.98px) { .nv__lang-btn { width: 100%; } }
 /* ---- MENU SU UNA RIGA, STABILE E SCALABILE (22/10/2026) ----
    Desktop: mai a capo (nowrap). Se le voci (anche dopo averne aggiunte o aggiunta una lingua) non
    ci stanno piu' in una riga, menu.js mette la classe .nv--compact su .nv-header e il menu passa
@@ -151,7 +151,7 @@ a.nv__dd-item.active, a.nv__dd-item.active:visited, a.nv__dd-item.active:hover {
 .nv__bar--mid { width: 14px; margin-left: auto; }
 .nv__toggle.collapsed .nv__bar--mid { opacity: 1; }
 .nv__toggle:hover .nv__bar--mid { width: 22px; }
-@media (max-width: 767.98px) {
+@media (max-width: 899.98px) {
   .nv__brand { order: 0; }
   .nv__toggle { order: 1; margin-left: auto; }
   .nv__cart { order: 2; margin-left: 0; }
@@ -163,3 +163,23 @@ a.nv__dd-item.active, a.nv__dd-item.active:visited, a.nv__dd-item.active:hover {
 /* Pulsante lingua: solo bandierina, senza codice IT/EN */
 .nv__lang-btn .nv__lang-code { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .nv__lang-btn .nv__flag { margin: 0; }
+
+/* =====================================================================
+   MENU ADATTIVO (23/10/2026)
+   Finestra larga: tutto a grandezza piena. Stringendo la finestra il menu SI RIMPICCIOLISCE
+   in proporzione (testo, spazi, logo, icone), restando su una riga. Solo sotto 900px
+   (tipo smartphone) diventa hamburger. Tutto in "em": la grandezza la decide UNA riga sola,
+   il font-size di .nv__inner (min 10.5px, 1.1% della larghezza, max 16px).
+   ===================================================================== */
+@media (min-width: 900px) {
+  .nv__inner { font-size: clamp(10.5px, 1.1vw, 16px); padding: .35em 1em; }
+  .nv__brand { font-size: 1.15em; gap: .5em; padding: .5em 0; }
+  .nv__logo { width: 2.1em; height: 2.1em; }
+  .nv__list { gap: .15em; }
+  .nv__link { font-size: .95em; padding: .5em .55em; }
+  .nv__lang-btn { gap: .45em; }
+  .nv__flag { width: 1.4em; height: 1em; }
+  .nv__ico { width: 1.35em; height: 1.35em; }
+  .nv__tools { padding-left: .35em; gap: .35em; }
+  .nv__tools .search__toggle, .nv__cart { font-size: 1em; padding: .5em .55em; }
+}
