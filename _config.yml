@@ -1,12 +1,12 @@
 # --- MULTILINGUA (vedi CLAUDE.md) ---
 locale: "it"
 default_lang: it
-languages: [it, en]
+languages: [it]
 
-brand: "Renzo Ferrucci"
+brand: "Nomentum Viaggi"
 related_posts: 3
 email: ""
-description: "Renzo Ferrucci: moda e lusso italiano. Collezioni, shop e Journal con biografie di stilisti, storie delle maison, classifiche e tendenze."
+description: "Nomentum Viaggi: gite in giornata, weekend, neve, vino e sapori, Roma di notte e tour per gruppi da Mentana, Roma e tutto il Lazio."
 minimal_mistakes_skin: default
 search: true
 
@@ -38,6 +38,9 @@ collections:
   progetti:
     output: true
     permalink: /progetti/:name/
+  tour:
+    output: true
+    permalink: /tour/:name/
 
 include:
   - _pages
@@ -110,6 +113,13 @@ defaults:
     values:
       layout: single
       author_profile: false
+  - scope:
+      path: ""
+      type: tour
+    values:
+      layout: single
+      author_profile: false
+      share: true
 
 category_archive:
   type: liquid
@@ -121,6 +131,6 @@ tag_archive:
 cms_homepage:
 
 # Numero WhatsApp con prefisso, senza + e senza spazi (es. 393331234567). Vuoto = bottone nascosto
-whatsapp: ""
+whatsapp: "393281970254"
 # Indirizzo del servizio che inoltra il modulo di contatto (worker). Vuoto = il modulo non appare.
 contact_endpoint: ""
