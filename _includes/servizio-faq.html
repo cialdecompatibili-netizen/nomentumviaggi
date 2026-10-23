@@ -33,7 +33,7 @@
         "@type": "LocalBusiness",
         "name": {{ site_name | jsonify }},
         "url": {{ site.url | append: site.baseurl | jsonify }},
-        "telephone": "+39{{ site.whatsapp | remove_first: '39' }}"
+        "telephone": {% if site.whatsapp != "" %}"+39{{ site.whatsapp | remove_first: '39' }}"{% else %}null{% endif %}
       }
     }{% if page.faq and page.faq.size > 0 %},
     {

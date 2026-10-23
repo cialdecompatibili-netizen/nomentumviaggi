@@ -25,4 +25,4 @@ Organizziamo gite e tour in gruppo. Per tenere i prezzi bassi un pullman parte s
 
 **Posso prenotare un gruppo mio?** Sì: [gruppi, scuole e aziende]({{ '/gruppi-e-aziende/' | relative_url }}) hanno un preventivo dedicato.
 
-[Scrivici su WhatsApp](https://wa.me/393281970254){: .btn .btn--primary} [Modulo contatti]({{ '/contatti/' | relative_url }}){: .btn .btn--inverse}
+[Scrivici su WhatsApp]({% if site.whatsapp != "" %}https://wa.me/{{ site.whatsapp }}{% else %}#{% endif %}){: .btn .btn--primary} [Modulo contatti]({{ '/contatti/' | relative_url }}){: .btn .btn--inverse}

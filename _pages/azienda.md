@@ -21,4 +21,4 @@ Organizziamo gite in giornata, weekend, giornate sulla neve, tour del vino, sera
 
 Chi viene da fuori può dormire a [Villa Nomentum](https://cialdecompatibili-netizen.github.io/villanomentum/), chi si innamora della zona può guardare [Immobiliare Nomentum](https://cialdecompatibili-netizen.github.io/nomentumimmobiliare/), e chi arriva dall'estero trova [Nomentum Travel](https://cialdecompatibili-netizen.github.io/nomentumtravel/), il sito in inglese.
 
-[Scrivici su WhatsApp](https://wa.me/393281970254){: .btn .btn--primary} [Modulo contatti]({{ '/contatti/' | relative_url }}){: .btn .btn--inverse}
+[Scrivici su WhatsApp]({% if site.whatsapp != "" %}https://wa.me/{{ site.whatsapp }}{% else %}#{% endif %}){: .btn .btn--primary} [Modulo contatti]({{ '/contatti/' | relative_url }}){: .btn .btn--inverse}

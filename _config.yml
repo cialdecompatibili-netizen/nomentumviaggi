@@ -130,7 +130,8 @@ tag_archive:
 
 cms_homepage:
 
-# Numero WhatsApp con prefisso, senza + e senza spazi (es. 393331234567). Vuoto = bottone nascosto
-whatsapp: "393281970254"
+# Numero WhatsApp con prefisso, senza + e senza spazi (es. 393331234567). Vuoto + whatsapp_demo: true = bottoni visibili ma inerti (DEMO). Vuoto + whatsapp_demo: false = bottoni nascosti
+whatsapp: ""
+whatsapp_demo: true
 # Indirizzo del servizio che inoltra il modulo di contatto (worker). Vuoto = il modulo non appare.
 contact_endpoint: ""

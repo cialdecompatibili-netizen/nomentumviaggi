@@ -7,6 +7,7 @@
 {%- endcomment -%}
 {%- assign sv_msg = "Buongiorno, vorrei un sopralluogo gratuito e un preventivo per: " | append: page.title | append: "." -%}
 {%- assign sv_wa = "https://wa.me/" | append: site.whatsapp | append: "?text=" | append: sv_msg | url_encode -%}
+{%- if site.whatsapp == "" -%}{%- assign sv_wa = "#" -%}{%- endif -%}
 {%- unless sv_css_done -%}
 <style>
 .sv-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.35rem;border-radius:10px;font-weight:700;font-size:1rem;line-height:1.2;text-decoration:none !important;border:2px solid transparent;cursor:pointer}
@@ -43,7 +44,7 @@
   <p>Il modo più veloce è WhatsApp: scrivici cosa c'è da fare e allega 2 o 3 foto del punto (anche scattate da terra). Ti diciamo subito come procedere, senza impegno.</p>
   <div class="sv-cta__row">
     <a class="sv-btn sv-btn--wa" href="{{ sv_wa }}" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
-    <a class="sv-btn sv-btn--tel" href="tel:+{{ site.whatsapp }}">Chiama +39 328 197 0254</a>
+    <a class="sv-btn sv-btn--tel" href="{% if site.whatsapp != '' %}tel:+{{ site.whatsapp }}{% else %}#{% endif %}">{% if site.whatsapp != '' %}Chiama +{{ site.whatsapp }}{% else %}Chiama (numero in arrivo){% endif %}</a>
     <a class="sv-btn sv-btn--form" href="{{ '/contatti/' | relative_url }}">Preferisci il modulo?</a>
   </div>
   <p class="sv-cta__small">Rispondiamo entro 24 ore, festivi esclusi.</p>
